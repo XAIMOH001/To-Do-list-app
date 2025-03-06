@@ -4,8 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do List app</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <section class="todo">
+        <h2>Todo App</h2>
+        <div class="input">
+            <input type="text" class="input-field" id="todoInput" placeholder="Add a new todo"/>
+            <button class="btn">  Add</button>
+        </div>
+        <ul class="scroll">
+            <li id="todolist"></li>
+        </ul>
+        <div>
+            <hr class="counter">
+            <div class="counter-container">
+                <p><span id="todoCount">0</span> total items</p>
+                <button id="deleteButton">Delete All</button>
+            </div>
+        </div>
+    </section>
 </body>
+<script src="index.js"></script>
 </html>
