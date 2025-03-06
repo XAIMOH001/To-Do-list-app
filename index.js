@@ -30,6 +30,7 @@ function addTask() {
     deleteBtn.onclick = function () {
         todoList.removeChild(taskItem);
         saveTasks();
+        updateTaskCount();
     };
 
     taskItem.appendChild(taskContent);
@@ -38,6 +39,7 @@ function addTask() {
 
     inputField.value = "";
     saveTasks();
+    updateTaskCount();
 }
 
 function saveTasks() {
@@ -84,11 +86,16 @@ function loadTasks() {
         todoList.appendChild(taskItem);
 
     });
+
+    updateTaskCount();
+}
+
+function updateTaskCount() {
+    todoCount.textContent = document.querySelectorAll(".task-item").length;
 }
 
 deleteAllBtn.onclick = function () {
     todoList.innerHTML = "";
     localStorage.removeItem("tasks");
+    updateTaskCount();
 };
-
-
